@@ -1,6 +1,6 @@
 %define module	HTTP-Cache-Transparent
 %define name	perl-%{module}
-%define version 0.7
+%define version 1.0
 %define release %mkrel 1
 
 Name:		%{name}
