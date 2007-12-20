@@ -11,6 +11,7 @@ License:	GPL or Artistic
 Group:		Development/Perl
 Source:		http://search.cpan.org/CPAN/authors/id/M/MA/MATTIASH/%{module}-%{version}.tar.bz2
 Url:		http://search.cpan.org/dist/%module/
+BuildRoot:	%{_tmppath}/%{name}-buildroot/
 BuildRequires:	perl-libwww-perl
 Buildarch:	noarch
 
