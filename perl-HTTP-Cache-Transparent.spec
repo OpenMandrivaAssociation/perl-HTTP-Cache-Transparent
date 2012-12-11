@@ -1,19 +1,17 @@
 %define module	HTTP-Cache-Transparent
-%define name	perl-%{module}
-%define version 1.0
-%define release %mkrel 5
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:		perl-%{module}
+Version:	1.0
+Release:	6
 Summary:	A transparant caching implementation of http get
 License:	GPL or Artistic
 Group:		Development/Perl
 Source:		http://search.cpan.org/CPAN/authors/id/M/MA/MATTIASH/%{module}-%{version}.tar.bz2
 Url:		http://search.cpan.org/dist/%module/
-BuildRoot:	%{_tmppath}/%{name}-buildroot/
+
+BuildRequires:	perl-devel
 BuildRequires:	perl-libwww-perl
-Buildarch:	noarch
+BuildArch:	noarch
 
 %description
 HTTP::Cache::Transparent is an implementation of http get that keeps a local
@@ -28,7 +26,7 @@ decide if the version in the cache is up-to-date or not.
 %setup -q -n %{module}-%{version}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor <<EOF
+perl Makefile.PL INSTALLDIRS=vendor <<EOF
 EOF
 %make
 
@@ -36,16 +34,47 @@ EOF
 %make test
 
 %install
-rm -rf $RPM_BUILD_ROOT
 %makeinstall_std
 
-%clean
-rm -rf $RPM_BUILD_ROOT
-
 %files
-%defattr(-,root,root)
 %doc Changes
 %{perl_vendorlib}/HTTP/Cache/Transparent.pm
 %{_mandir}/*/*
 
+%changelog
+* Mon Sep 14 2009 Thierry Vignaud <tv@mandriva.org> 1.0-5mdv2010.0
++ Revision: 440586
+- rebuild
+
+* Fri Mar 06 2009 Antoine Ginies <aginies@mandriva.com> 1.0-4mdv2009.1
++ Revision: 350222
+- 2009.1 rebuild
+
+* Thu Jul 31 2008 Thierry Vignaud <tv@mandriva.org> 1.0-3mdv2009.0
++ Revision: 257245
+- rebuild
+- kill re-definition of %%buildroot on Pixel's request
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+* Thu Dec 13 2007 Guillaume Rousse <guillomovitch@mandriva.org> 1.0-1mdv2008.1
++ Revision: 119231
+- update to new version 1.0
+
+
+* Wed Jan 03 2007 Stefan van der Eijk <stefan@mandriva.org> 0.7-1mdv2007.0
++ Revision: 103810
+- Import perl-HTTP-Cache-Transparent
+
+* Thu Mar 16 2006 Rafael Garcia-Suarez <rgarciasuarez@mandriva.com> 0.7-1mdk
+- 0.7
+
+* Sun Jul 17 2005 Stefan van der Eijk <stefan@eijk.nu> 0.6-1mdk
+- 0.6
+- %%mkrel
+- BuildRequires
+
+* Mon Jan 24 2005 Stefan van der Eijk <stefan@mandrake.org> 0.5-1mdk
+- first mdk release
 
