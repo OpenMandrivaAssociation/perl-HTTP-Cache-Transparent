@@ -1,12 +1,13 @@
 %define module	HTTP-Cache-Transparent
+%define upstream_version 1.1
 
 Name:		perl-%{module}
-Version:	1.0
-Release:	6
+Version:	%perl_convert_version 1.1
+Release:	1
 Summary:	A transparant caching implementation of http get
 License:	GPL or Artistic
 Group:		Development/Perl
-Source:		http://search.cpan.org/CPAN/authors/id/M/MA/MATTIASH/%{module}-%{version}.tar.bz2
+Source:		http://search.cpan.org/CPAN/authors/id/M/MA/MATTIASH/HTTP-Cache-Transparent-1.1.tar.gz
 Url:		http://search.cpan.org/dist/%module/
 
 BuildRequires:	perl-devel
@@ -23,7 +24,7 @@ The http-headers If-Modified-Since and ETag are used to let the server
 decide if the version in the cache is up-to-date or not.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{module}-%{upstream_version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor <<EOF
@@ -77,4 +78,5 @@ EOF
 
 * Mon Jan 24 2005 Stefan van der Eijk <stefan@mandrake.org> 0.5-1mdk
 - first mdk release
+
 
