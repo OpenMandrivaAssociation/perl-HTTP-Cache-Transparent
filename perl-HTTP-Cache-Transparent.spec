@@ -3,7 +3,7 @@
 
 Name:		perl-%{module}
 Version:	%perl_convert_version 1.1
-Release:	1
+Release:	2
 Summary:	A transparant caching implementation of http get
 License:	GPL or Artistic
 Group:		Development/Perl
