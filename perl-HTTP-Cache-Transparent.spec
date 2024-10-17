@@ -8,7 +8,7 @@ Summary:	A transparant caching implementation of http get
 License:	GPL or Artistic
 Group:		Development/Perl
 Source:		http://search.cpan.org/CPAN/authors/id/M/MA/MATTIASH/HTTP-Cache-Transparent-1.1.tar.gz
-Url:		http://search.cpan.org/dist/%module/
+Url:		https://search.cpan.org/dist/%module/
 
 BuildRequires:	perl-devel
 BuildRequires:	perl-libwww-perl
