@@ -10,6 +10,7 @@ Group:		Development/Perl
 Source:		http://search.cpan.org/CPAN/authors/id/M/MA/MATTIASH/HTTP-Cache-Transparent-1.1.tar.gz
 Url:		https://search.cpan.org/dist/%module/
 
+BuildRequires:	make
 BuildRequires:	perl-devel
 BuildRequires:	perl-libwww-perl
 BuildArch:	noarch
