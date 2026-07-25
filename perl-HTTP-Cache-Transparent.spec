@@ -1,14 +1,14 @@
 %define module	HTTP-Cache-Transparent
-%define upstream_version 1.1
+%define upstream_version 1.4
 
 Name:		perl-%{module}
-Version:	%perl_convert_version 1.1
-Release:	3
+Version:	%{upstream_version}
+Release:	1
 Summary:	A transparant caching implementation of http get
 License:	GPL or Artistic
 Group:		Development/Perl
-Source:		http://search.cpan.org/CPAN/authors/id/M/MA/MATTIASH/HTTP-Cache-Transparent-1.1.tar.gz
-Url:		https://search.cpan.org/dist/%module/
+Source:		https://cpan.metacpan.org/authors/id/M/MA/MATTIASH/HTTP-Cache-Transparent-1.4.tar.gz
+Url:		https://metacpan.org/dist/HTTP-Cache-Transparent
 
 BuildRequires:	make
 BuildRequires:	perl-devel
