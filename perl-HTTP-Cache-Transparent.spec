@@ -1,9 +1,7 @@
 %define module	HTTP-Cache-Transparent
-%define upstream_version 1.4
-
 Name:		perl-%{module}
-Version:	%{upstream_version}
-Release:	1
+Version:	1.4
+Release:	2
 Summary:	A transparant caching implementation of http get
 License:	GPL or Artistic
 Group:		Development/Perl
@@ -25,7 +23,7 @@ The http-headers If-Modified-Since and ETag are used to let the server
 decide if the version in the cache is up-to-date or not.
 
 %prep
-%setup -q -n %{module}-%{upstream_version}
+%setup -q -n %{module}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor <<EOF
